@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Cars Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f6f6f6;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 0 10px 0;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .scroll-container {
+      overflow-y: auto;
+      max-height: 80vh;
+      margin: 30px auto 0 auto;
+      padding-right: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .car-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding: 0 0 40px 0;
+      width: 750px;
+      margin: 0 auto;
+      transition: box-shadow 0.3s;
+    }
+    .car {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 100%;
+      padding: 24px 18px 18px 18px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px) scale(0.97);
+      animation: fadeUp 0.7s forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 260px;
+    }
+    .car:nth-child(1) { animation-delay: 0.1s; }
+    .car:nth-child(2) { animation-delay: 0.2s; }
+    .car:nth-child(3) { animation-delay: 0.3s; }
+    .car:nth-child(4) { animation-delay: 0.4s; }
+    .car:nth-child(5) { animation-delay: 0.5s; }
+    .car:nth-child(6) { animation-delay: 0.6s; }
+    .car:nth-child(7) { animation-delay: 0.7s; }
+    .car:nth-child(8) { animation-delay: 0.8s; }
+    .car img {
+      width: 100%;
+      max-width: 320px;
+      height: 140px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      display: block;
+      background: #f6f6f6;
+    }
+    .car:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(215,38,61,0.13);
+      border: 2px solid #d7263d;
+    }
+    .car:hover img {
+      transform: scale(1.07) rotate(-2deg);
+    }
+    .car h2 {
+      font-size: 20px;
+      margin: 10px 0 5px 0;
+      color: #222;
+      text-align: center;
+      font-weight: 600;
+    }
+    .car .price {
+      color: #d7263d;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    /* Scrollbar styling */
+    .scroll-container::-webkit-scrollbar {
+      width: 10px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: #d7263d44;
+      border-radius: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: #fff;
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @media (max-width: 900px) {
+      .car-list { width: 98vw; grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .car-list { width: 99vw; grid-template-columns: 1fr; }
+      .car { padding: 14px 6px 10px 6px; }
+      .car img { height: 80px; }
+      .car h2 { font-size: 14px; }
+      .car .price { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Premium Cars Gallery</h1>
+    <p style="color:#888;font-size:16px;">Scroll & click any car to view details and buy</p>
+  </header>
+
+  <div class="scroll-container">
+    <section class="car-list">
+      <div class="car" onclick="location.href='car1.html';">
+        <img src="assets/featured2.png" alt="Porsche 718 Cayman">
+        <h2>Porsche 718 Cayman</h2>
+        <div class="price">$63,400</div>
+      </div>
+      <div class="car" onclick="location.href='car2.html';">
+        <img src="assets/featured3.png" alt="Porsche 718 Boxster">
+        <h2>Porsche 718 Boxster</h2>
+        <div class="price">$65,500</div>
+      </div>
+      <div class="car" onclick="location.href='car3.html';">
+        <img src="assets/featured4.png" alt="Porsche Taycan">
+        <h2>Porsche Taycan</h2>
+        <div class="price">$90,900</div>
+      </div>
+      <div class="car" onclick="location.href='car4.html';">
+        <img src="assets/featured5.png" alt="Tesla Model S">
+        <h2>Tesla Model S</h2>
+        <div class="price">$74,990</div>
+      </div>
+      <div class="car" onclick="location.href='car5.html';">
+        <img src="assets/offer.png" alt="Audi e-Tron">
+        <h2>Audi e-Tron</h2>
+        <div class="price">$70,800</div>
+      </div>
+      <div class="car" onclick="location.href='car6.html';">
+        <img src="assets/popular1.png" alt="Porsche Taycan Turbo S">
+        <h2>Porsche Taycan Turbo S</h2>
+        <div class="price">$185,000</div>
+      </div>
+      <div class="car" onclick="location.href='car7.html';">
+        <img src="assets/popular2.png" alt="Porsche Panamera">
+        <h2>Porsche Panamera</h2>
+        <div class="price">$92,400</div>
+      </div>
+      <div class="car" onclick="location.href='car8.html';">
+        <img src="assets/popular3.png" alt="Porsche 718 Cayman S">
+        <h2>Porsche 718 Cayman S</h2>
+        <div class="price">$75,400</div>
+      </div>
+      <div class="car" onclick="location.href='car9.html';">
+        <img src="assets/popular4.png" alt="Audi e-Tron Sportback">
+        <h2>Audi e-Tron Sportback</h2>
+        <div class="price">$82,300</div>
+      </div>
+      <div class="car" onclick="location.href='car10.html';">
+        <img src="assets/popular5.png" alt="Tesla Model S Plaid">
+        <h2>Tesla Model S Plaid</h2>
+        <div class="price">$135,990</div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
